@@ -103,6 +103,9 @@ const Author = () => {
                                    Федор Булдаков Георгиевич
                                </Grid>
                                <Grid item xs={12} md={12} lg={12}>
+                                   adsfadsfasdfadsfasdfasdfasdf
+                               </Grid>
+                               <Grid item xs={12} md={12} lg={12}>
                                    fbuldakov@mail.ru
                                </Grid>
                            </Grid>
