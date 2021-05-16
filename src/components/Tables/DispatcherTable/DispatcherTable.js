@@ -57,7 +57,7 @@ class DispatcherTable extends React.Component{
                 <div className="max_height">
                     <React.Fragment>
                         <IconButton aria-label="add" color="warning" align="right" className="add_btn"
-                                    onClick={this.handleEdit}
+                                    onClick={() => history.push('/createDispatcher')}
                         >
                             <AddCircleOutlineOutlinedIcon />
                             Добавить

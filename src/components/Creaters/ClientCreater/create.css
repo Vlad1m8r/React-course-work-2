@@ -1,0 +1,11 @@
+.create {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/*# sourceMappingURL=create.css.map */

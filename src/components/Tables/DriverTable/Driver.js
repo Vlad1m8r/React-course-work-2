@@ -6,8 +6,20 @@ import EditIcon from '@material-ui/icons/Edit';
 import TableRow from "@material-ui/core/TableRow";
 import TableCell from "@material-ui/core/TableCell";
 import IconButton from "@material-ui/core/IconButton";
+import {history} from "../../../index";
 
 const Driver = ({driver, key, onEdit, onDelete}) => {
+
+
+    const handleSetDriver = (driver) => {
+        history.push({
+            pathname: `/editDriver/${driver.id}`,
+            state: {
+                driver: driver,
+            }
+        })
+    }
+
     return (
 
         <TableRow key={driver.id}>
@@ -23,7 +35,7 @@ const Driver = ({driver, key, onEdit, onDelete}) => {
                 <IconButton aria-label="delete" onClick={() => onDelete(driver.id)} color="secondary">
                     <DeleteIcon />
                 </IconButton>
-                <IconButton aria-label="delete" onClick={() => onEdit(driver)} color="warning">
+                <IconButton aria-label="delete" onClick={() => handleSetDriver(driver)} color="warning">
                     <EditIcon />
                 </IconButton>
             </TableCell>

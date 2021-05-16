@@ -42,15 +42,15 @@ export const createOrder = (order) => {
         const data = {
             id: order?.id,
             date: order?.date,
-            time: order?.time,
+            time: `${order?.time}`,
             roadTime: order?.roadTime,
             distance: order?.distance,
             cost: order?.cost,
             addressTo: order?.addressTo,
             addressFrom: order?.addressFrom,
-            driver: {id: order.driver?.id || order.driver},
-            client: {id: order.client?.id || order.client},
-            dispatcher: {id: order.dispatcher?.id || order.dispatcher}
+            driver: {id: order.driver},
+            client: {id: order.client},
+            dispatcher: {id: order.dispatcher}
         }
         return (dispatch => {
             dispatch(editOrder(data))
@@ -59,18 +59,19 @@ export const createOrder = (order) => {
         const data = {
             id: order?.id,
             date: order?.date,
-            time: order?.time,
+            time: `${order?.time}`,
             roadTime: order?.roadTime,
             distance: order?.distance,
             cost: order?.cost,
             addressTo: order?.addressTo,
             addressFrom: order?.addressFrom,
-            driver: {id: order.driver?.id || order.driver},
-            client: {id: order.client?.id || order.client},
-            dispatcher: {id: order.dispatcher?.id || order.dispatcher}
+            driver: {id: order.driver},
+            client: {id: order.client},
+            dispatcher: {id: order.dispatcher}
         }
         debugger
         return (dispatch) => {
+            debugger
             return axios.post(ORDER_REST_API_URL, data)
                 .then(response => {
 
@@ -108,6 +109,7 @@ export const editOrder = (data) => {
         //     method: 'PUT',
         //     body: JSON.stringify(data)
         // }).then(response => {
+        debugger
         return axios.put(`${ORDER_REST_API_URL}/${id}`, data)
             .then(() => {
                 // history.push('/')

@@ -8,6 +8,11 @@ import ClientDash from "../Dashs/Client/ClientDash";
 import DispatcherDash from "../Dashs/Dispathcer/DispatcherDash";
 import Nav from "./Nav";
 import Author from "./Author";
+import NewCarCreate from "../Creaters/CarCreater/NewCarCreate";
+import NewDispatcherCreate from "../Creaters/DispathcerCreater/NewDispatcherCreate";
+import NewClientCreate from "../Creaters/ClientCreater/NewClientCreate";
+import NewDriverCreate from "../Creaters/DriverCreater/NewDriverCreate";
+import NewOrderCreate from "../Creaters/OrderCreater/NewOrderCreate";
 
 
 class Switcher extends React.Component {
@@ -66,6 +71,61 @@ class Switcher extends React.Component {
                     <Route path="/author"
                            exact
                            component={() => <Author/>}
+                    />
+
+                    <Route path="/editCar/:id"
+                           exact
+                           car={this.state.car}
+                           component={(props) => <NewCarCreate {...props}/>}
+                    />
+
+                    <Route path="/createCar"
+                           exact
+                           component={() => <NewCarCreate/>}
+                    />
+                    <Route path="/editDispatcher/:id"
+                           exact
+                           dispatcher={this.state.dispatcher}
+                           component={(props) => <NewDispatcherCreate {...props}/>}
+                    />
+
+                    <Route path="/createDispatcher"
+                           exact
+                           component={() => <NewDispatcherCreate/>}
+                    />
+
+                    <Route path="/editClient/:id"
+                           exact
+                           client={this.state.client}
+                           component={(props) => <NewClientCreate {...props}/>}
+                    />
+
+                    <Route path="/createClient"
+                           exact
+                           component={() => <NewClientCreate/>}
+                    />
+
+
+                    <Route path="/editDriver/:id"
+                           exact
+                           driver={this.state.driver}
+                           component={(props) => <NewDriverCreate {...props}/>}
+                    />
+
+                    <Route path="/createDriver"
+                           exact
+                           component={() => <NewDriverCreate/>}
+                    />
+
+                    <Route path="/editOrder/:id"
+                           exact
+                           order={this.state.order}
+                           component={(props) => <NewOrderCreate {...props}/>}
+                    />
+
+                    <Route path="/createOrder"
+                           exact
+                           component={() => <NewOrderCreate/>}
                     />
 
                 </Switch>

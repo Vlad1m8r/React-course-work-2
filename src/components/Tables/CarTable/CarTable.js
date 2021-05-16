@@ -45,9 +45,15 @@ class CarTable extends React.Component{
         this.setState({...this.state, createCarModal: "true", oed: car})
     }
 
-    // createData(id, date, name, shipTo, paymentMethod, amount) {
-    //     return { id, date, name, shipTo, paymentMethod, amount };
-    // }
+
+    handleSetCar = (car) => {
+        history.push({
+            pathname: `/createCar/${car.id}`,
+            state: {
+                car: car,
+            }
+        })
+    }
 
 
     render() {
@@ -69,7 +75,7 @@ class CarTable extends React.Component{
                 <div className="max_height">
                     <React.Fragment>
                         <IconButton aria-label="add" color="warning" align="right" className="add_btn"
-                                    onClick={() => this.handleEdit(null)}
+                                    onClick={() => history.push('/createCar')}
                         >
                             <AddCircleOutlineOutlinedIcon />
                             Добавить

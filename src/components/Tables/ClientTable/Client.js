@@ -4,8 +4,19 @@ import TableRow from "@material-ui/core/TableRow";
 import TableCell from "@material-ui/core/TableCell";
 import IconButton from "@material-ui/core/IconButton";
 import EditIcon from "@material-ui/icons/Edit";
+import {history} from "../../../index";
 
 const Client = ({client, key, onEdit, onDelete}) => {
+
+    const handleSetClient = (client) => {
+        history.push({
+            pathname: `/editClient/${client.id}`,
+            state: {
+                client: client,
+            }
+        })
+    }
+
     return (
 
         <TableRow key={client.id}>
@@ -17,7 +28,7 @@ const Client = ({client, key, onEdit, onDelete}) => {
                 <IconButton aria-label="delete" onClick={() => onDelete(client.id)} color="secondary">
                     <DeleteIcon />
                 </IconButton>
-                <IconButton aria-label="delete" onClick={() => onEdit(client)} color="warning">
+                <IconButton aria-label="delete" onClick={() => handleSetClient(client)} color="warning">
                     <EditIcon />
                 </IconButton>
             </TableCell>

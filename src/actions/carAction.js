@@ -35,33 +35,27 @@ export const createCarError = (data) => {
 }
 
 export const createCar = (car) => {
-
-    console.log("car")
-    console.log(car.lastName)
-    console.log(car.lastName)
-
     if (car.id) {
         const data = {
-            id: car?.id,
-            carVIN: car?.carVIN,
-            carNumber: car?.carNumber,
-            carModel: car?.carModel,
-            carCategory: car?.carCategory,
-            carColor: car?.carColor,
-            carModelYear: car?.carModelYear,
+            id: car.id,
+            carVIN: car.carVIN,
+            carNumber: car.carNumber,
+            carModel: car.carModel,
+            carCategory: car.carCategory,
+            carColor: car.carColor,
+            carModelYear: car.carModelYear,
         }
         return (dispatch => {
             dispatch(editCar(data))
         })
     } else {
         const data = {
-            id: car?.id,
-            carVIN: car?.carVIN,
-            carNumber: car?.carNumber,
-            carModel: car?.carModel,
-            carCategory: car?.carCategory,
-            carColor: car?.carColor,
-            carModelYear: car?.carModelYear,
+            carVIN: car.carVIN,
+            carNumber: car.carNumber,
+            carModel: car.carModel,
+            carCategory: car.carCategory,
+            carColor: car.carColor,
+            carModelYear: car.carModelYear,
         }
 
         return (dispatch) => {

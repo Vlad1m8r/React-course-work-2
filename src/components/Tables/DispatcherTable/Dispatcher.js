@@ -6,10 +6,20 @@ import EditIcon from '@material-ui/icons/Edit';
 import TableRow from "@material-ui/core/TableRow";
 import TableCell from "@material-ui/core/TableCell";
 import IconButton from "@material-ui/core/IconButton";
+import {history} from "../../../index";
 
 const Dispatcher = ({dispatcher, key, onEdit, onDelete}) => {
-    return (
 
+    const handleSetDispatcher = (dispatcher) => {
+        history.push({
+            pathname: `/editDispatcher/${dispatcher.id}`,
+            state: {
+                dispatcher: dispatcher,
+            }
+        })
+    }
+
+    return (
         <TableRow key={dispatcher.id}>
             <TableCell>{dispatcher.id}</TableCell>
             <TableCell>{dispatcher.firstName}</TableCell>
@@ -24,7 +34,7 @@ const Dispatcher = ({dispatcher, key, onEdit, onDelete}) => {
                 <IconButton aria-label="delete" onClick={() => onDelete(dispatcher.id)} color="secondary">
                     <DeleteIcon />
                 </IconButton>
-                <IconButton aria-label="delete" onClick={() => onEdit(dispatcher)} color="warning">
+                <IconButton aria-label="delete" onClick={() => handleSetDispatcher(dispatcher)} color="warning">
                     <EditIcon />
                 </IconButton>
             </TableCell>

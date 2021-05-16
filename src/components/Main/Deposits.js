@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
@@ -18,11 +18,12 @@ export default function Deposits() {
     })
 
 
-    axios.get(`http://localhost:8080/api/v1/orders/deposit`)
-        .then(response => {
-            const chartInfo = response.data;
-            setchartInfo(chartInfo)
-        })
+
+    // axios.get(`http://localhost:8080/api/v1/orders/deposit`)
+    //     .then(response => {
+    //         const chartInfo = response.data;
+    //         setchartInfo(chartInfo)
+    //     })
 
     // const classes = useStyles();
     return (

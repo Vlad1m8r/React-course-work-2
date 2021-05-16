@@ -63,7 +63,7 @@ class OrderTable extends React.Component {
                     {/*------------------------------*/}
                     <React.Fragment>
                         <IconButton aria-label="add" color="warning" align="right" className="add_btn"
-                                    onClick={() => this.handleEdit(null)}
+                                    onClick={() => history.push('/createOrder')}
                         >
                             <AddCircleOutlineOutlinedIcon />
                             Добавить

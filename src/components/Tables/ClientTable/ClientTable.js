@@ -60,7 +60,7 @@ class ClientTable extends React.Component{
                 <div className="max_height">
                     <React.Fragment>
                         <IconButton aria-label="add" color="warning" align="right" className="add_btn"
-                                    onClick={this.handleEditNull}
+                                    onClick={() => history.push('/createClient')}
                         >
                             <AddCircleOutlineOutlinedIcon />
                             Добавить
@@ -81,7 +81,7 @@ class ClientTable extends React.Component{
                                         <Client key={row.id}
                                              client={row}
                                              onDelete={this.props.onDelete}
-                                             onEdit={this.handleEdit}/>
+                                                onEdit={this.handleEdit.bind(this)}/>
                                     )
                                 })}
                             </TableBody>

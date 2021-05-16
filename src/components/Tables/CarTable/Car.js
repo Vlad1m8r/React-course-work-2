@@ -7,8 +7,18 @@ import TableCell from "@material-ui/core/TableCell";
 import TableRow from "@material-ui/core/TableRow";
 import IconButton from '@material-ui/core/IconButton';
 import {hslToRgb} from "@material-ui/core";
+import {history} from "../../../index";
 
 const Car = ({car, key, onEdit, onDelete}) => {
+
+    const handleSetCar = (car) => {
+        history.push({
+            pathname: `/editCar/${car.id}`,
+            state: {
+                car: car,
+            }
+        })
+    }
 
 
     return (
@@ -25,7 +35,7 @@ const Car = ({car, key, onEdit, onDelete}) => {
                 <IconButton aria-label="delete" onClick={() => onDelete(car.id)} color="secondary">
                     <DeleteIcon />
                 </IconButton>
-                <IconButton aria-label="delete" onClick={() => onEdit(car)} color="warning">
+                <IconButton aria-label="delete" onClick={() => handleSetCar(car)} color="warning">
                     <EditIcon />
                 </IconButton>
             </TableCell>

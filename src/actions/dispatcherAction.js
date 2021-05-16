@@ -33,36 +33,31 @@ export const createDispatcherError = (data) => {
 
 export const createDispatcher = (dispatcher) => {
 
-    console.log("dispatcher")
-    console.log(dispatcher.lastName)
-    console.log(dispatcher.lastName)
-
     if (dispatcher.id) {
         const data = {
-            id: dispatcher?.id,
-            firstName: dispatcher?.firstName,
-            lastName: dispatcher?.lastName,
-            email: dispatcher?.email,
-            phoneNumber: dispatcher?.phoneNumber,
-            gender: dispatcher?.gender,
-            address: dispatcher?.address,
-            salary: dispatcher?.salary,
-            ssn: dispatcher?.ssn,
+            id: dispatcher.id,
+            firstName: dispatcher.firstName,
+            lastName: dispatcher.lastName,
+            email: dispatcher.email,
+            phoneNumber: dispatcher.phoneNumber,
+            gender: dispatcher.gender,
+            address: dispatcher.address,
+            salary: dispatcher.salary,
+            ssn: dispatcher.ssn,
         }
         return (dispatch => {
             dispatch(editDispatcher(data))
         })
     } else {
         const data = {
-            id: dispatcher?.id,
-            firstName: dispatcher?.firstName,
-            lastName: dispatcher?.lastName,
-            email: dispatcher?.email,
-            phoneNumber: dispatcher?.phoneNumber,
-            gender: dispatcher?.gender,
-            address: dispatcher?.address,
-            salary: dispatcher?.salary,
-            ssn: dispatcher?.ssn,
+            firstName: dispatcher.firstName,
+            lastName: dispatcher.lastName,
+            email: dispatcher.email,
+            phoneNumber: dispatcher.phoneNumber,
+            gender: dispatcher.gender,
+            address: dispatcher.address,
+            salary: dispatcher.salary,
+            ssn: dispatcher.ssn,
         }
 
         return (dispatch) => {
